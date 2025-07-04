@@ -1,0 +1,59 @@
+{
+  "eventos": [
+    {
+      "id": "1",
+      "titulo": "Rock en el Parque",
+      "descripcion": "Una noche épica con las mejores bandas de rock local.",
+      "fecha": "2025-08-15",
+      "hora": "20:00",
+      "lugar": "Parque de los Pies Descalzos",
+      "imagen": "https://placehold.co/600x400/D3D3D3/000?text=Rock+en+el+Parque",
+      "estado": "activo",
+      "principal": true
+    },
+    {
+      "id": "2",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": true
+      
+    }
+  ],
+  "usuario": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "password1"
+    }
+  ],
+
+  "suscriptores": [
+    {
+      "id": "1",
+      "email": "juan@gmail.com",
+      "fechaSuscripcion": "10-04-2025"
+    },
+     {
+      "id": "2",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "15-04-2025"
+    }
+
+  ],
+
+  "mensajes": [
+    {
+      "id": "1",
+      "nombre": "Ana",
+      "correo": "ana@gmail.com",
+      "asunto": "consulta sobre el evento de jazz",
+      "mensaje": "sjbcdscb sdcb nsdc ndsm sm"
+    }
+  ]
+}
+
