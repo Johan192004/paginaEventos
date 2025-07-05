@@ -1,4 +1,6 @@
 
+    // funcion para el boton de scroll hacia arriba
+        
         // Obtener el botón
         let mybutton = document.getElementById("scrollTopBtn");
 
@@ -34,20 +36,20 @@ async function obtenerEventosPrincipales() {
         }
         const data = await response.json();
 
-        // Filtrar los eventos que tienen "principal: true" y tomar los 3 primeros
+        // Filtrar los eventos que tienen principal: true y tomar los 3 primeros
         const eventosPrincipales = data.eventos.filter(evento => evento.principal === true).slice(0, 3);
 
-        // Obtener los contenedores del HTML donde se insertará el contenido
+        // Obtenemos los contenedores del HTML donde se insertará el contenido
         const eventosContainer = document.getElementById('eventos-principales-container');
         const modalsContainer = document.getElementById('modals-container');
         
-        // Limpiar contenedores por si acaso
+        // Limpiamos contenedores para evitar duplicados
         eventosContainer.innerHTML = '';
         modalsContainer.innerHTML = '';
 
-        //  Generar el HTML para cada evento y su modal correspondiente
+        //  Generar el HTML para cada evento y su modal
         eventosPrincipales.forEach((evento, index) => {
-            // Se alterna el diseño (imagen a la izq/der) usando el índice
+            // alternamos el diseño de las imagenes y texto izquierda-derecha
             const orderClass = index % 2 === 0 ? '' : 'flex-row-reverse';
 
             // HTML para la tarjeta del evento
