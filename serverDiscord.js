@@ -93,9 +93,15 @@ app.post('/subscribe', async (req, res) => {
     if (!email) {
         return res.status(400).json({ message: 'Email es requerido para la suscripción.' });
     }
+    // Verificamos si el correo ya está suscrito
+    const existing = await fetch(`http://localhost:3000/suscriptores?email=${encodeURIComponent(email)}`);
+    const data = await existing.json();
+    if (data.length > 0) {
+        return res.status(409).json({ message: 'Este correo ya está suscrito.' });
+    }
 
     try {
-        // 1. Guardar el email del suscriptor en JSON Server
+        // 1. Guardamos el email del suscriptor en JSON Server
         // Esta petición POST guarda el nuevo suscriptor en suscriptores de db.json
         const saveResponse = await fetch('http://localhost:3000/suscriptores', {
             method: 'POST',
