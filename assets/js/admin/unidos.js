@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   navLinks.forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const text = link.textContent.trim().toLowerCase();
-      if (text === 'contacto') {
-        window.location.href = 'contacto.html';
-      } else if (text === 'suscripciones') {
-        window.location.href = 'index.html';
+      if (link.getAttribute('href') === '#') {
+        e.preventDefault();
       }
     });
   });
