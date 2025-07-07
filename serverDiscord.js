@@ -1,4 +1,3 @@
-// serverDiscord.js
 
 // Importa y carga las variables de entorno desde el archivo .env
 require('dotenv').config();
@@ -12,51 +11,45 @@ const fetch = require('node-fetch'); // Para hacer peticiones HTTP desde el back
 
 // Inicializa la aplicación Express
 const app = express();
-// Define el puerto del servidor Express. Prioriza la variable de entorno PORT, si no, usa 3001.
 const PORT = process.env.PORT || 3001; 
 
-// --- Middlewares (Funciones que se ejecutan antes de que la petición llegue a la ruta) ---
 
 // Configura bodyParser para procesar cuerpos de petición en formato JSON
 app.use(bodyParser.json()); 
 
 // Configura CORS (Cross-Origin Resource Sharing)
-// Esto es VITAL para permitir que tu frontend (ejecutándose en un puerto diferente como 5500)
-// pueda hacer peticiones a este servidor Express.
 app.use((req, res, next) => {
-    // Permite peticiones desde cualquier origen ('*'). ¡En producción, cámbialo a tu dominio específico!
-    // Ej: 'http://localhost:5500' para Live Server, o 'https://tusitioweb.com' cuando esté en línea.
     res.header('Access-Control-Allow-Origin', '*'); 
     // Define los métodos HTTP permitidos (GET, POST, PUT, DELETE, OPTIONS)
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); 
     // Define las cabeceras permitidas en las peticiones
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); 
     
-    // Maneja las peticiones de pre-vuelo (OPTIONS), que los navegadores envían antes de peticiones complejas
+    // Maneja las peticiones de pre-vuelo, que los navegadores envían antes de peticiones complejas
     if (req.method === 'OPTIONS') {
         return res.sendStatus(200); // Responde un 200 OK inmediatamente para las peticiones OPTIONS
     }
     next(); // Pasa la petición al siguiente middleware o a la ruta correspondiente
 });
 
-// --- Configuración e Inicialización del Bot de Discord ---
+//Configuración e Inicialización del Bot de Discord 
 
-// Obtiene el token y el ID del canal desde las variables de entorno
+// Obtenemos el token de .env
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
 const DISCORD_CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
 
 // Crea una nueva instancia del cliente de Discord, especificando las "intenciones" necesarias
 const discordClient = new Client({ 
     intents: [
-        GatewayIntentBits.Guilds, // Necesario para acceder a información de servidores (guilds)
-        GatewayIntentBits.MessageContent // Necesario para que el bot pueda enviar y recibir contenido de mensajes
-                                        // (aunque solo enviaremos, Discord lo requiere para interactuar con mensajes)
+        GatewayIntentBits.Guilds, // Necesario para acceder a información de servidores 
+        GatewayIntentBits.MessageContent // Necesario para que el bot pueda enviar y recibir mensajes
+                                       
     ] 
 });
 
 // Solo intenta iniciar sesión si el token de Discord está configurado
 if (DISCORD_BOT_TOKEN) {
-    // Evento 'ready': se dispara una vez que el bot se conecta exitosamente a Discord
+    // Evento ready, se dispara una vez que el bot se conecta exitosamente a Discord
     discordClient.once('ready', () => {
         console.log(`[Discord Bot] ${discordClient.user.tag} está en línea!`);
     });
@@ -68,18 +61,18 @@ if (DISCORD_BOT_TOKEN) {
     console.warn("[Discord Bot] DISCORD_BOT_TOKEN no configurado en .env. Las notificaciones de Discord no funcionarán.");
 }
 
-// --- Configuración e Inicialización de Nodemailer para Envío de Correos ---
+// configuración e Inicialización de Nodemailer para Envío de Correos 
 
 // Obtiene las credenciales de correo desde las variables de entorno
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
 
-// Crea un "transporter" de Nodemailer, que es el objeto que se encarga de enviar correos
+// Crea un transporter de Nodemailer, que es el objeto que se encarga de enviar correos
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // Configura para usar el servicio de Gmail (puedes cambiarlo si usas otro)
+    service: 'gmail', 
     auth: {
-        user: EMAIL_USER, // Tu correo electrónico
-        pass: EMAIL_PASS  // Tu contraseña (o contraseña de aplicación si usas 2FA en Gmail)
+        user: EMAIL_USER, 
+        pass: EMAIL_PASS  
     }
 });
 
@@ -89,7 +82,7 @@ if (!EMAIL_USER || !EMAIL_PASS) {
 }
 
 
-// --- Endpoints de la API (Rutas que tu frontend llamará) ---
+//  Endpoints de la API  
 
 // Endpoint POST para manejar las suscripciones a tu boletín
 // Llamado desde el formulario de suscripción en home.js
@@ -103,22 +96,21 @@ app.post('/subscribe', async (req, res) => {
 
     try {
         // 1. Guardar el email del suscriptor en JSON Server
-        // Esta petición POST guarda el nuevo suscriptor en la colección 'suscriptores' de db.json
+        // Esta petición POST guarda el nuevo suscriptor en suscriptores de db.json
         const saveResponse = await fetch('http://localhost:3000/suscriptores', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, fechaSuscripcion: new Date().toISOString() }) // Añade fecha
         });
 
-        // Si la respuesta de JSON Server no es exitosa (ej. 4xx, 5xx), lanza un error
+        // Si la respuesta de JSON Server no es exitosa, lanza un error
         if (!saveResponse.ok) {
             throw new Error(`Error al guardar suscriptor en JSON Server: ${saveResponse.status} - ${saveResponse.statusText}`);
         }
-        const newSubscriber = await saveResponse.json(); // Parsea la respuesta de JSON Server
+        const newSubscriber = await saveResponse.json(); // Parseamos la respuesta de JSON Server
         console.log(`[Suscripción] Nuevo suscriptor guardado en db.json: ${newSubscriber.email}`);
 
         // 2. Enviar notificación al canal de Discord del administrador
-        // Solo intenta enviar si el bot de Discord está en línea y el ID del canal está configurado
         if (discordClient.isReady() && DISCORD_CHANNEL_ID) {
             try {
                 // Intenta obtener el objeto del canal por su ID
@@ -126,14 +118,12 @@ app.post('/subscribe', async (req, res) => {
                 // Verifica que el canal exista y sea un canal de texto
                 if (channel && channel.isTextBased()) {
                     // Envía el mensaje de notificación al canal de Discord
-                    await channel.send(`🎉 ¡Nueva suscripción en Medellín Sounds! Correo: **${email}**`);
+                    await channel.send(`🎉 ¡Nueva suscripción en DoReMiFa! Correo: **${email}**`);
                     console.log(`[Discord] Notificación de nueva suscripción enviada.`);
                 } else {
                     console.warn(`[Discord] Canal de Discord no encontrado o no es de texto con ID: ${DISCORD_CHANNEL_ID}. Verifique ID y permisos.`);
                 }
             } catch (discordError) {
-                // Aquí NO lanzamos el error. Solo lo registramos.
-                // Esto permite que la suscripción se marque como exitosa para el usuario final,
                 // incluso si hubo un problema menor o transitorio con Discord.
                 console.error("[Discord] Error al intentar enviar mensaje a Discord (posiblemente un problema secundario):", discordError.message);
             }
@@ -141,20 +131,17 @@ app.post('/subscribe', async (req, res) => {
             console.warn("[Discord] Cliente de Discord no está listo o DISCORD_CHANNEL_ID no configurado, no se pudo intentar enviar notificación.");
         }
 
-        // Si todo lo anterior (guardar en JSON Server y el intento de Discord) fue bien,
-        // envía una respuesta de éxito al frontend (home.js).
+        // si todo va bien envía una respuesta de éxito al home.js
         res.status(200).json({ message: 'Suscripción exitosa y notificación enviada.' });
 
     } catch (error) {
-        // Este bloque catch maneja errores críticos (ej. fallo al conectar con JSON Server)
-        // y envía una respuesta de error al frontend.
-        console.error('❌ Error en el endpoint /subscribe:', error.message);
+        // manejo errores críticos, enviamos una respuesta de error al home.js
+        console.error('Error en el endpoint /subscribe:', error.message);
         res.status(500).json({ message: 'Error interno del servidor al procesar la suscripción.' });
     }
 });
 
 // Endpoint POST para manejar la publicación/actualización de un evento
-// Llamado desde el panel de administración (admin.js) después de guardar un evento
 app.post('/publish-event', async (req, res) => {
     const event = req.body; // El objeto del evento completo enviado desde el frontend del admin
 
@@ -164,10 +151,6 @@ app.post('/publish-event', async (req, res) => {
     }
 
     try {
-        // En este punto, asumimos que el evento ya ha sido guardado/actualizado en db.json
-        // por el script de administración (admin.js) directamente.
-        // Si no fuera así, podrías agregar aquí la lógica para guardar el evento en JSON Server.
-
         // 1. Obtener todos los suscriptores de JSON Server para enviarles correos
         const suscriptoresResponse = await fetch('http://localhost:3000/suscriptores');
         if (!suscriptoresResponse.ok) {
@@ -186,7 +169,7 @@ app.post('/publish-event', async (req, res) => {
         const mailOptions = {
             from: EMAIL_USER, // El remitente del correo (tu email configurado en .env)
             to: emails.join(', '), // Los destinatarios (todos los suscriptores, separados por coma)
-            subject: `🎉 ¡Nuevo Evento en Medellín Sounds: ${event.titulo}!`, // Asunto del correo
+            subject: `🎉 ¡Nuevo Evento en DoReMiFa: ${event.titulo}!`, 
             html: `
                 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
                     <h2 style="color: #0599b3;">¡No te pierdas este nuevo evento!</h2>
@@ -201,26 +184,26 @@ app.post('/publish-event', async (req, res) => {
                     <p><a href="http://localhost:5500/index.html" style="display: inline-block; padding: 10px 20px; background-color: #0599b3; color: white; text-decoration: none; border-radius: 5px;">Visita nuestra web para más detalles</a></p>
                     <p style="font-size: 0.9em; color: #666; margin-top: 30px;">Este correo fue enviado porque te suscribiste a nuestras notificaciones de eventos musicales.</p>
                 </div>
-            ` // Contenido HTML del correo
+            `
         };
 
         // Intenta enviar el correo
         await transporter.sendMail(mailOptions);
         console.log(`[Email Notifier] Correos de notificación de evento "${event.titulo}" enviados exitosamente a ${emails.length} suscriptores.`);
 
-        // Si el envío fue exitoso, envía una respuesta de éxito al frontend del admin
+        // mensaje de éxito alq home.js
         res.status(200).json({ message: 'Notificación de evento procesada y correos enviados.' });
 
     } catch (error) {
         // Manejo de errores para este endpoint
-        console.error('❌ Error en el endpoint /publish-event:', error.message);
+        console.error('Error en el endpoint /publish-event:', error.message);
         res.status(500).json({ message: 'Error interno del servidor al procesar la publicación del evento.' });
     }
 });
 
 
-// Inicia el servidor Express
-// app.listen() hace que el servidor comience a escuchar peticiones en el puerto especificado
+// Iniciamos el servidor Express
+// app.listen() nos permite que el servidor comience a escuchar peticiones en el puerto especificado
 app.listen(PORT, () => {
     console.log(`Servidor Express corriendo en http://localhost:${PORT}`);
     console.log(`Asegúrate de que JSON Server también esté corriendo en http://localhost:3000`);
