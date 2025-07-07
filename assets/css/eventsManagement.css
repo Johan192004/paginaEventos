@@ -1,0 +1,203 @@
+/* ============================
+   - VARIABLES DE COLOR
+============================= */
+:root {
+  --rosa-pastel: #FFD1DC;
+  --azul-pastel: #ADD8E6;
+  --verde-menta: #B0E0A8;
+  --amarillo-pastel: #FFFACD;
+  --lavanda: #E6E6FA;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --texto: #333;
+
+  --color-primary: var(--rosa-pastel);
+  --color-secondary: var(--lavanda);
+  --color-accent: var(--verde-menta);
+  --color-bg: var(--amarillo-pastel);
+  --color-dark: var(--texto);
+}
+
+/* ============================
+   - ESTILOS GENERALES
+============================= */
+body {
+  background: linear-gradient(to right, var(--lavanda), var(--rosa-pastel));
+  color: var(--texto);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ============================
+   - BARRA DE BÚSQUEDA
+============================= */
+.search-bar {
+  max-width: 500px;
+  box-shadow: 0 2px 5px var(--sombra);
+  border-radius: 8px;
+}
+
+/* ============================
+   - TARJETAS
+============================= */
+.imagen-card {
+  width: 180px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px var(--sombra);
+  position: relative;
+}
+
+.imagen-card .plus-icon {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.descripcion-card {
+  background-color: var(--amarillo-pastel);
+  flex: 1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 5px var(--sombra);
+}
+
+.estado {
+  color: red;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  margin: 0;
+}
+
+.titulo {
+  margin: 0;
+  font-weight: bold;
+}
+
+.descripcion {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* ============================
+   - BOTÓN AGREGAR
+============================= */
+.btn-agregar {
+  background-color: var(--verde-menta);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--texto);
+  box-shadow: 0 2px 5px var(--sombra);
+}
+
+/* ============================
+   - SIDEBAR DERECHA
+============================= */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(to bottom, var(--rosa-pastel), var(--azul-pastel));
+  color: var(--texto);
+  min-height: 100vh;
+  border-left: 2px solid var(--sombra);
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.sub-logo {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.admin-label {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.nav-link {
+  padding: 10px 0;
+  color: var(--texto);
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-link.active {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+}
+
+.nav-link.salir {
+  margin-top: 30px;
+  color: red;
+}
+
+/* ============================
+   - PAGINACIÓN PERSONALIZADA
+============================= */
+.paginacion-container {
+  padding: 20px 0;
+}
+
+.pag-btn {
+  background-color: var(--lavanda);
+  margin: 0 5px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--texto);
+  font-weight: bold;
+  box-shadow: 0 2px 5px var(--sombra);
+}
+
+/* ============================
+   - CONTENIDO INTERNO TARJETA
+============================= */
+.descripcion-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.estado {
+  color: red;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+}
+
+.descripcion {
+  margin-top: auto;
+  font-style: italic;
+}
+
+/* ============================
+   - SELECTOR DE EVENTOS
+============================= */
+.evento-selector {
+  width: 80px;
+  border-radius: 8px;
+  border: 1px solid var(--sombra);
+  box-shadow: 0 2px 5px var(--sombra);
+}
