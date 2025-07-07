@@ -11,23 +11,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const form = document.getElementById('form-suscripcion');
   const correoInput = document.getElementById('correoInput');
-  const tbody = document.querySelector('table tbody');
 
-  if (form && correoInput && tbody) {
+  if (form && correoInput) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const correo = correoInput.value.trim();
       if (correo) {
-        const rowCount = tbody.rows.length + 1;
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td><strong>${rowCount}</strong></td><td>${correo}</td><td><a href="#" class="text-danger btn-eliminar">Eliminar</a></td>`;
-        tbody.appendChild(tr);
+        const mensaje = {
+          nombre: 'Usuario',
+          correo: correo,
+          asunto: 'Nuevo mensaje',
+          mensaje: 'Este es un mensaje de prueba'
+        };
+        localStorage.setItem('mensajeContacto', JSON.stringify(mensaje));
         correoInput.value = '';
-        localStorage.setItem('correoContacto', correo);
       }
     });
+  }
 
-    // Delegación de eventos para eliminar filas
+  // Mostrar mensaje de contacto en el card de contact.html
+  const mensajeContacto = document.getElementById('mensaje-contacto');
+  if (mensajeContacto) {
+    const mensajeGuardado = localStorage.getItem('mensajeContacto');
+    if (mensajeGuardado) {
+      const datos = JSON.parse(mensajeGuardado);
+      mensajeContacto.textContent = `${datos.nombre} (${datos.correo}) - ${datos.asunto}: ${datos.mensaje}`;
+    }
+  }
+
+  // Mostrar mensaje de contacto en la tabla de subscriptions.html
+  const tbody = document.querySelector('table tbody');
+  if (tbody) {
+    const mensajeGuardado = localStorage.getItem('mensajeContacto');
+    if (mensajeGuardado) {
+      const datos = JSON.parse(mensajeGuardado);
+      const rowCount = tbody.rows.length + 1;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><strong>${rowCount}</strong></td><td>${datos.correo}</td><td><a href="#" class="text-danger btn-eliminar">Eliminar</a></td>`;
+      tbody.appendChild(tr);
+    }
+  }
+
+  // Delegación de eventos para eliminar filas
+  if (tbody) {
     tbody.addEventListener('click', function (e) {
       if (e.target && e.target.classList.contains('btn-eliminar')) {
         e.preventDefault();
@@ -35,13 +61,5 @@ document.addEventListener('DOMContentLoaded', function () {
         if (row) row.remove();
       }
     });
-  }
-
-  const mensajeContacto = document.getElementById('mensaje-contacto');
-  if (mensajeContacto) {
-    const correoGuardado = localStorage.getItem('correoContacto');
-    if (correoGuardado) {
-      mensajeContacto.textContent = correoGuardado;
-    }
   }
 });
