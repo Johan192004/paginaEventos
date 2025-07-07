@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-        /* Paleta de colores ajustada para el proyecto de eventos:
-        #ffffff (White)
-        #0599b3 (Tu tono azul/cian) - Principal para secciones y elementos clave
-        #343a40 (Un gris oscuro para cards secundarias)
-        #9d1c24 (Tu tono rojo para botones danger)
-        */
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333; /* Color de texto general */
-        }
-
         .bg-red-section {
             background-color: #0599b3;
             color: white;
@@ -39,8 +27,7 @@
             height: 100%;
         }
         .event-carousel-img {
-            width: 100%;
-            height: 100%; /* Ajustado a 100% para ocupar el item */
+            height: 600px; /* Altura sugerida para el carrusel principal */
             object-fit: cover;
         }
 
@@ -50,24 +37,17 @@
             right: 20px;
             z-index: 99;
             display: none;
-            background-color: #9d1c24; /* Color de tu botón danger */
-            border-color: #9d1c24;
-            color: white;
         }
-        #scrollTopBtn:hover {
-            background-color: #7a161c; /* Tono más oscuro al hover */
-            border-color: #7a161c;
-        }
-
-        /* Ajustes para las tarjetas de "Más Eventos" */
+        /* Añadido/Ajustado para las tarjetas de "Más Eventos" */
         .card {
-            background-color: #343a40; /* Fondo oscuro para las tarjetas */
+            background-color: #343a40; /* Fondo oscuro */
             color: white;
             border: none;
             height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
         }
+
         .card-body .btn-danger {
-            background-color: #9d1c24; /* Color rojo para el botón */
+            background-color: #9d1c24; /* Color rojo de tu diseño original para el botón */
             border-color: #9d1c24;
             color: white;
         }
@@ -75,46 +55,26 @@
             background-color: #7a161c;
             border-color: #7a161c;
         }
+
         .card-img-top {
-            height: 200px; /* Altura fija para imágenes de las tarjetas */
+            height: 200px; /* Altura fija para las imágenes de las tarjetas */
             object-fit: cover;
             width: 100%;
         }
+
         .card-body {
             display: flex;
             flex-direction: column;
         }
+
         .card-text {
-            flex-grow: 1; /* Permite que el texto ocupe el espacio y empuje el botón hacia abajo */
-        }
-        .btn.mt-auto {
-            margin-top: auto; /* Alinea el botón al final de la tarjeta */
+            flex-grow: 1; /* Para que el texto ocupe espacio y el botón se alinee abajo */
         }
 
-        /* Estilos del footer */
-        footer {
-            background-color: #343a40; /* Fondo oscuro del footer */
-            color: #ffffff;
-            padding: 40px 0;
+        .btn.mt-auto {
+            margin-top: auto; /* Alinea el botón al final de la card */
         }
-        footer a {
-            color: #e5cb84; /* Color dorado para enlaces en footer, si aplica de otra paleta */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: #ffffff;
-        }
-        /* Estilo para los iconos de redes sociales en el footer */
-        footer .social-icons a {
-            font-size: 2rem; /* Tamaño de los iconos */
-            margin: 0 10px; /* Espacio entre iconos */
-            color: white; /* Color blanco para los iconos */
-            transition: color 0.3s ease;
-        }
-        footer .social-icons a:hover {
-            color: #0599b3; /* Color de tu sección principal al hover */
-        }
+
     </style>
 </head>
 
@@ -123,9 +83,11 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="https://placehold.co/100x40/000000/FFFFFF?text=LOGO" alt="Logo">
+                <img src="assets/img/Black White Minimalist Professional Initial Logo (1).png" alt="Logo DoReMiFa"
+                    style="max-height: 40px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -151,9 +113,21 @@
 
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators" id="heroCarouselIndicators">
-            </div>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
         <div class="carousel-inner" id="heroCarouselInner">
+            <div class="carousel-item active">
+                <img src="./assets/img/1.jpeg" class="d-block w-100 event-carousel-img" alt="Imagen 1">
             </div>
+            <div class="carousel-item">
+                <img src="./assets/img/2.jpg" class="d-block w-100 event-carousel-img" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/3.png" class="d-block w-100 event-carousel-img" alt="Imagen 3">
+            </div>
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -168,11 +142,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://placehold.co/600x400/E8E8E8/969696?text=Imagen+Corporativa" class="img-fluid rounded" alt="Sobre nosotros">
+                    <img src="https://placehold.co/600x400/E8E8E8/969696?text=Imagen+Corporativa"
+                        class="img-fluid rounded" alt="Sobre nosotros">
                 </div>
                 <div class="col-md-6">
                     <h2>HEADING</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
             </div>
         </div>
@@ -183,10 +161,12 @@
             <h2 class="text-center mb-5">EVENTOS</h2>
 
             <div id="eventos-principales-container">
-                </div>
+            </div>
 
             <div class="text-center mt-4">
-                <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#moreEventsCarouselCollapse" aria-expanded="false" aria-controls="moreEventsCarouselCollapse">
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#moreEventsCarouselCollapse" aria-expanded="false"
+                    aria-controls="moreEventsCarouselCollapse">
                     MÁS EVENTOS
                 </button>
             </div>
@@ -197,7 +177,7 @@
         <div class="container-fluid bg-light py-5">
             <div id="eventsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" id="secondaryCarouselInner">
-                    </div>
+                </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -214,7 +194,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.333333333333!2d-75.586944!3d6.218611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429b8a3e9d3a7%3A0x2c2b4a5d3f2a1b1d!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1678886400000!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.333333333333!2d-75.586944!3d6.218611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429b8a3e9d3a7%3A0x2c2b4a5d3f2a1b1d!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1678886400000!5m2!1ses!2sco"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-md-6">
                     <h3 class="mb-4">CONTÁCTANOS</h3>
@@ -249,8 +232,7 @@
                     <h4>SUSCRÍBETE</h4>
                     <p>Recibe notificaciones de nuestros próximos eventos.</p>
                     <form id="subscribeForm" class="d-flex justify-content-center">
-                        <input type="email" class="form-control w-50 me-2" placeholder="tu.correo@ejemplo.com" id="subscribeEmail" required>
-                        <button class="btn btn-danger" type="submit">Suscribirse</button>
+                        <input type="email" class="form-control w-50 me-2" placeholder="tu.correo@ejemplo.com" id="subscribeEmail" required> <button class="btn btn-danger" type="submit">Suscribirse</button>
                     </form>
                 </div>
             </div>
