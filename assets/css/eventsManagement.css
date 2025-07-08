@@ -2,10 +2,10 @@
    - VARIABLES DE COLOR
 ============================= */
 :root {
-  --rosa-pastel: #FFD1DC;
-  --azul-pastel: #ADD8E6;
-  --verde-menta: #B0E0A8;
-  --amarillo-pastel: #FFFACD;
+  --rosa-pastel: #C70039;
+  --azul-pastel: #F39C12;
+  --verde-menta: #7FDBFF;
+  --amarillo-pastel: #8E44AD;
   --lavanda: #E6E6FA;
   --sombra: rgba(0, 0, 0, 0.1);
   --texto: #333;
@@ -98,19 +98,44 @@ body {
 /* ============================
    - SIDEBAR DERECHA
 ============================= */
-.sidebar {
+/* .sidebar {
   width: 260px;
   background: linear-gradient(to bottom, var(--rosa-pastel), var(--azul-pastel));
   color: var(--texto);
   min-height: 100vh;
   border-left: 2px solid var(--sombra);
+} */
+
+
+.sidebar {
+  width: 300px;
+  background: linear-gradient(to bottom right, #c70039, #f39c12, #8e44ad);
+  margin-left: auto;
+  height: 100vh;
 }
 
+.sidebar .nav-link {
+  font-weight: 600;
+  padding: 0.8rem 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background: black;
+  color: white !important;
+}
+
+.logo img {
+  max-width: 120px;
+}
+/* 
 .logo {
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: 2px;
-}
+} */
 
 .sub-logo {
   font-size: 0.9rem;

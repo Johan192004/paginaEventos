@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style1.css">
 </head>
 <body>
 
@@ -13,7 +14,8 @@
 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="../img/images.jpeg" class="card-body" alt="...">
+                    <!-- <img src="../img/images.jpeg" class="card-body" alt="..."> -->
+                    <span class="eventsActive"></span>
                     <div class="card-body">
                         <h5 class="card-title">Eventos</h5>
                         <p class="card-text">Activos.</p>
@@ -24,7 +26,8 @@
 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="../img/images.jpeg" class="card-body" alt="...">
+                    <!-- <img src="../img/images.jpeg" class="card-body" alt="..."> -->
+                    <span class="eventsCancelled"></span>
                     <div class="card-body">
                         <h5 class="card-title">Eventos</h5>
                         <p class="card-text">Cancelados</p>
@@ -36,7 +39,8 @@
                 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="../img/images.jpeg" class="card-body" alt="...">
+                    <!-- <img src="../img/images.jpeg" class="card-body" alt="..."> -->
+                    <span class="totalEvents"></span>
                     <div class="card-body">
                         <h5 class="card-title">Eventos</h5>
                         <p class="card-text">Totales</p>
@@ -47,7 +51,8 @@
 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <span class="emailsRegistered"></span>
                     <div class="card-body">
                         <h5 class="card-title">CORREOS</h5>
                         <p class="card-text">Registrados</p>
@@ -58,7 +63,8 @@
 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <span class="newMessages"></span>
                     <div class="card-body">
                         <h5 class="card-title">MENSAJES</h5>
                         <p class="card-text">Nuevos</p>
@@ -69,7 +75,8 @@
 
             <div class="col text-center">
                 <div class="card" style="width: 15rem;">
-                    <img src="../img/images.jpeg" class="card-body" alt="...">
+                    <!-- <img src="../img/images.jpeg" class="card-body" alt="..."> -->
+                    <span class="unactiveEvents"></span>
                     <div class="card-body">
                         <h5 class="card-title">Eventos</h5>
                         <p class="card-text">Inactivos</p>
@@ -80,5 +87,22 @@
         </div>
     </div>
     
+    <aside class="sidebar p-4 d-flex flex-column text-center text-white">
+        <div class="logo mb-4">
+        <img src="../img/Black White Minimalist Professional Initial Logo (1).png" alt="Logo DoReMiFa" class="img-fluid mb-2" />
+        <p class="small">Anthony Martinez</p>
+        </div>
+        <h4 class="fw-bold">ADMIN</h4>
+        <hr class="border-light" />
+        <nav class="nav flex-column">
+        <a href="../admin/desktop.html" class="nav-link text-white">Escritorio</a>
+        <a href="../admin/subscriptions.html" class="nav-link text-white">Suscripciones</a>
+        <a href="../admin/eventsManagement.html" class="nav-link text-white">Gestion Eventos</a>
+        <a href="../admin/contact.html" class="nav-link active">Contacto</a>
+        </nav>
+        <div class="mt-auto">
+        <a href="../admin/login.html" class="btn btn-outline-light btn-sm">SALIR</a>
+        </div>
+  </aside>
 </body>
 </html>
