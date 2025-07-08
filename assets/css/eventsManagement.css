@@ -9,6 +9,8 @@
   --lavanda: #E6E6FA;
   --sombra: rgba(0, 0, 0, 0.1);
   --texto: #333;
+  --eliminar: #e74141;
+  --eliminar-light: #df5e5ed5;
 
   --color-primary: var(--rosa-pastel);
   --color-secondary: var(--lavanda);
@@ -147,20 +149,30 @@ body {
 /* ============================
    - PAGINACIÓN PERSONALIZADA
 ============================= */
-.paginacion-container {
-  padding: 20px 0;
+.pag-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px var(--sombra);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.pag-btn {
-  background-color: var(--lavanda);
-  margin: 0 5px;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: var(--texto);
-  font-weight: bold;
-  box-shadow: 0 2px 5px var(--sombra);
+.pag-btn:hover {
+  opacity: 0.9;
 }
+
+.btn-dark {
+  background-color: var(--texto);
+  color: white;
+}
+
+.btn-light {
+  background-color: var(--lavanda);
+  color: var(--texto);
+}
+
 
 /* ============================
    - CONTENIDO INTERNO TARJETA
@@ -218,9 +230,15 @@ body {
 }
 
 .estado-tag.inactivo {
-  background-color: var(--lavanda);
+  background-color: #ffea00; /* amarillo pastel */
   color: #000;
 }
+
+.estado-tag.cancelado {
+  background-color: #ff0000; /* rojo pastel */
+  color: white;
+}
+
 
 /* ============================
    - BOTON EDITAR
@@ -246,4 +264,20 @@ body {
   border-radius: 8px;
   border: 1px solid var(--sombra);
   box-shadow: 0 2px 5px var(--sombra);
+}
+
+/* ============================
+   - BOTON BORRAR
+============================= */
+.btn-outline-danger {
+  border-color: var(--eliminar);
+  color: var(--texto);
+  background-color: var(--eliminar);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  background-color:var(--eliminar-light);
+  color: #000;
+  border-color: var(--eliminar-light);
 }

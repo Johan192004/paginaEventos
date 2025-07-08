@@ -11,7 +11,7 @@ async function mostrarEventos() {
   const contenedor = document.querySelector(".eventos .row");
   contenedor.innerHTML = "";
 
-  const res = await fetch(`${API_URL}?q=${filtroBusqueda}&_limit=${eventosPorPagina}&_page=${paginaActual}`);
+  const res = await fetch(`${API_URL}?q=${filtroBusqueda}&_sort=createdAt&_order=desc&_limit=${eventosPorPagina}&_page=${paginaActual}`);
   const eventos = await res.json();
 
   eventos.forEach(evento => {
@@ -23,7 +23,6 @@ async function mostrarEventos() {
         <img src="${evento.imagen}" class="card-img-top" alt="${evento.titulo}" />
         <div class="card-body text-center">
           <strong>Imagen</strong>
-          <div class="plus-icon" onclick="eliminarEvento('${evento.id}')">–</div>
         </div>
     </div>
     <div class="card descripcion-card">
@@ -31,8 +30,8 @@ async function mostrarEventos() {
             <div class="mb-2">
                 <p class="mb-1">
                     <strong class="text-danger">Estado:</strong>
-                    <span class="estado-tag ${evento.estado === 'activo' ? 'activo' : 'inactivo'}">
-                        ${evento.estado.toUpperCase()}
+                    <span class="estado-tag ${evento.estado}">
+                      ${evento.estado.toUpperCase()}
                     </span>
                 </p>
                 <p class="mb-2 text-danger fw-semibold">📅 ${evento.fecha}</p>
@@ -41,10 +40,13 @@ async function mostrarEventos() {
                 <p class="descripcion mb-1">📍 <span class="fw-semibold">${evento.lugar}</span></p>
                 <p class="descripcion mb-3">⏰ <span class="fw-semibold">${evento.hora}</span></p>
             </div>
-            <div class="text-end">
-                <button class="btn btn-outline-primary btn-sm" onclick="editarEvento('${evento.id}')">
-                    ✏️ Editar
-                </button>
+            <div class="d-flex justify-content-end gap-2">
+              <button class="btn btn-outline-primary btn-sm" onclick="editarEvento('${evento.id}')">
+                ✏️ Editar
+              </button>
+              <button class="btn btn-outline-danger btn-sm" onclick="eliminarEvento('${evento.id}')">
+                🗑️ Eliminar
+              </button>
             </div>
         </div>
     </div>
@@ -75,31 +77,20 @@ document.getElementById("eventCount").addEventListener("change", e => {
 // =======================
 // AGREGAR EVENTO
 // =======================
-document.querySelector(".btn-agregar").addEventListener("click", async () => {
-  const nuevo = {
-    titulo: "Nuevo Evento",
-    descripcion: "Descripción del nuevo evento.",
-    fecha: new Date().toISOString().split("T")[0],
-    hora: "00:00",
-    lugar: "Lugar por definir",
-    imagen: "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
-    estado: "activo",
-    principal: false
-  };
-
-  await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(nuevo)
-  });
-
-  mostrarEventos();
+document.querySelector(".btn-agregar").addEventListener("click", () => {
+  // Limpiar el formulario
+  document.getElementById("formEditar").reset();
+  document.getElementById("editarId").value = "";
+  document.getElementById("modalEditar").style.display = "flex";
 });
 
 // =======================
 // ELIMINAR EVENTO
 // =======================
 async function eliminarEvento(id) {
+  const confirmar = confirm("¿Estás seguro de que deseas eliminar este evento?");
+  if (!confirmar) return;
+
   await fetch(`${API_URL}/${id}`, { method: "DELETE" });
   mostrarEventos();
 }
@@ -117,6 +108,8 @@ async function editarEvento(id) {
   document.getElementById("editarFecha").value = evento.fecha;
   document.getElementById("editarHora").value = evento.hora || "00:00";
   document.getElementById("editarLugar").value = evento.lugar;
+  document.getElementById("editarEstado").value = evento.estado;
+  document.getElementById("editarImagen").value = evento.imagen;
 
   document.getElementById("modalEditar").style.display = "flex";
 }
@@ -135,26 +128,38 @@ document.getElementById("formEditar").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const id = document.getElementById("editarId").value;
-  const actualizado = {
+  const evento = {
     titulo: document.getElementById("editarTitulo").value,
     descripcion: document.getElementById("editarDescripcion").value,
     fecha: document.getElementById("editarFecha").value,
     hora: document.getElementById("editarHora").value,
     lugar: document.getElementById("editarLugar").value,
-    imagen: "https://placehold.co/600x400/EEE/000?text=Editado",
-    estado: "activo",
-    principal: false
+    imagen: document.getElementById("editarImagen").value || "https://placehold.co/600x400/EEE/000?text=Evento",
+    estado: document.getElementById("editarEstado").value,
+    principal: false,
+    createdAt: Date.now()
   };
 
-  await fetch(`${API_URL}/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(actualizado)
-  });
+  if (id) {
+    // MODO EDITAR
+    await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(evento)
+    });
+  } else {
+    // MODO AGREGAR
+    await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(evento)
+    });
+  }
 
   cerrarModal();
   mostrarEventos();
 });
+
 
 // =======================
 // INICIAR APP
