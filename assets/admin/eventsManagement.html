@@ -119,7 +119,14 @@
                 </div>
                 <div class="mb-2">
                     <label>Imagen (URL)</label>
-                    <input type="url" id="editarImagen" class="form-control">
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+                <div class="mb-2 principalDiv">
+                    <label>¿Principal?</label>
+                    <select id="editarPrincipal" class="form-select" required>
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
                 </div>
                 <div class="d-flex justify-content-between mt-3">
                     <button type="submit" class="btn btn-success btn-sm">Guardar</button>

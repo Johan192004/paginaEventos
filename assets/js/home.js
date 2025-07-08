@@ -39,7 +39,7 @@ async function cargarEventosYActualizarIU() {
         const eventos = await response.json();
 
         // Filtrar eventos activos y ordenar por fecha
-        const eventosActivos = eventos.filter(e => e.estado === 'activo')
+        const eventosActivos = eventos.filter(e => e.estado === 'activo' && e.principal == true)
                                      .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
 
         const eventosPrincipales = eventosActivos.slice(0, 3);
