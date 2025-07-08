@@ -1,30 +1,22 @@
 /* ============================
-   - VARIABLES DE COLOR
+   - VARIABLES DE COLOR (NUEVAS)
 ============================= */
 :root {
-  --rosa-pastel: #FFD1DC;
-  --azul-pastel: #ADD8E6;
-  --verde-menta: #B0E0A8;
-  --amarillo-pastel: #FFFACD;
-  --lavanda: #E6E6FA;
-  --sombra: rgba(0, 0, 0, 0.1);
-  --texto: #333;
-  --eliminar: #e74141;
-  --eliminar-light: #df5e5ed5;
-
-  --color-primary: var(--rosa-pastel);
-  --color-secondary: var(--lavanda);
-  --color-accent: var(--verde-menta);
-  --color-bg: var(--amarillo-pastel);
-  --color-dark: var(--texto);
+  --color-primary: #c70039;
+  --color-secondary: #f39c12;
+  --color-accent: #8e44ad;
+  --color-bg: #f5f5f5;
+  --color-dark: #343a40;
+  --color-danger: #9d1c24;
+  --color-white: #fff;
 }
 
 /* ============================
    - ESTILOS GENERALES
 ============================= */
 body {
-  background: linear-gradient(to right, var(--lavanda), var(--rosa-pastel));
-  color: var(--texto);
+  background: var(--color-bg);
+  color: var(--color-dark);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -88,30 +80,48 @@ body {
    - BOTÓN AGREGAR
 ============================= */
 .btn-agregar {
-  background-color: var(--verde-menta);
+  background-color: var(--color-primary);
   border: none;
   padding: 10px 30px;
   border-radius: 8px;
   font-weight: bold;
-  color: var(--texto);
-  box-shadow: 0 2px 5px var(--sombra);
+  color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* ============================
    - SIDEBAR DERECHA
 ============================= */
 .sidebar {
-  width: 260px;
-  background: linear-gradient(to bottom, var(--rosa-pastel), var(--azul-pastel));
-  color: var(--texto);
+  width: 300px;
+  background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary), var(--color-accent));
+  color: var(--color-white);
   min-height: 100vh;
-  border-left: 2px solid var(--sombra);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.sidebar .nav-link {
+  font-weight: 600;
+  padding: 0.8rem 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+  color: var(--color-white) !important;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background: black;
+  color: var(--color-white) !important;
 }
 
 .logo {
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
 
 .sub-logo {
@@ -122,28 +132,10 @@ body {
 
 .admin-label {
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-white);
   padding: 6px 12px;
   border-radius: 10px;
   font-weight: bold;
-}
-
-.nav-link {
-  padding: 10px 0;
-  color: var(--texto);
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
-.nav-link.active {
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-}
-
-.nav-link.salir {
-  margin-top: 30px;
-  color: red;
 }
 
 /* ============================

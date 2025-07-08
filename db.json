@@ -1,7 +1,6 @@
 {
   "eventos": [
     {
-      "id": "1",
       "titulo": "Rock en el Parque",
       "descripcion": "Una noche épica con las mejores bandas de rock local.",
       "fecha": "2025-08-15",
@@ -9,7 +8,9 @@
       "lugar": "Parque de los Pies Descalzos",
       "imagen": "https://placehold.co/600x400/D3D3D3/000?text=Rock+en+el+Parque",
       "estado": "activo",
-      "principal": true
+      "principal": false,
+      "createdAt": 1751941457421,
+      "id": "1"
     },
     {
       "id": "2",
@@ -98,6 +99,84 @@
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
       "estado": "activo",
       "principal": false
+    },
+    {
+      "id": "ae6d",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "e61a",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "6fc2",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "2160",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "38aa",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "47b4",
+      "titulo": "Nuevo Evento",
+      "descripcion": "Descripción del nuevo evento.",
+      "fecha": "2025-07-08",
+      "hora": "00:00",
+      "lugar": "Lugar por definir",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "f933",
+      "titulo": "aSD",
+      "descripcion": "ASDCsa",
+      "fecha": "2025-07-02",
+      "hora": "21:25",
+      "lugar": "sadxsa",
+      "imagen": "https://img.freepik.com/foto-gratis/vista-posterior-multitud-fans-viendo-actuaciones-directo-concierto-musica-noche-copiar-espacio_637285-544.jpg?semt=ais_hybrid&w=740",
+      "estado": "inactivo",
+      "principal": false,
+      "createdAt": 1751941477109
     }
   ],
   "usuario": [
@@ -251,6 +330,13 @@
       "correo": "ana@gmail.com",
       "asunto": "consulta sobre el evento de jazz",
       "mensaje": "sjbcdscb sdcb nsdc ndsm sm"
+    },
+    {
+      "id": "fe14",
+      "nombre": "pedro",
+      "correo": "pedro@gmail.com",
+      "asunto": "jugar",
+      "mensaje": "hola quisiera averiguar para hacer un evento"
     }
   ]
 }

@@ -212,7 +212,7 @@ if (subscribeForm) {
 // Lógica del formulario de contacto
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const nombre = document.getElementById('nombre').value.trim();
         const correo = document.getElementById('correo').value.trim();
@@ -222,7 +222,21 @@ if (contactForm) {
             // Guardar en localStorage como objeto
             const mensajeContacto = { nombre, correo, asunto, mensaje };
             localStorage.setItem('mensajeContacto', JSON.stringify(mensajeContacto));
-            alert('¡Mensaje enviado correctamente!');
+            // Guardar en db.json usando la API de mensajes (JSON Server)
+            try {
+                const response = await fetch('http://localhost:3000/mensajes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(mensajeContacto)
+                });
+                if (response.ok) {
+                    alert('¡Mensaje enviado correctamente!');
+                } else {
+                    alert('El mensaje se guardó localmente, pero no se pudo guardar en el servidor.');
+                }
+            } catch (error) {
+                alert('El mensaje se guardó localmente, pero no se pudo guardar en el servidor.');
+            }
             contactForm.reset();
         }
     });
