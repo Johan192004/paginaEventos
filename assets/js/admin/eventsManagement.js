@@ -5,6 +5,40 @@ let paginaActual = 1;
 let filtroBusqueda = "";
 
 // =======================
+// FUNCIÓN PARA ENVIAR NOTIFICACIÓN VIA PIPEDREAM
+// =======================
+async function enviarNotificacionPipedream(evento) {
+  const PIPEDREAM_WEBHOOK_URL = "https://eovgmtyl88h0thn.m.pipedream.net"; // Reemplaza con tu variable de entorno
+
+  try {
+    const response = await fetch(PIPEDREAM_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        titulo: evento.titulo,
+        descripcion: evento.descripcion,
+        fecha: evento.fecha,
+        hora: evento.hora,
+        lugar: evento.lugar,
+        imagen: evento.imagen,
+        estado: evento.estado,
+        mensaje: `¡Nuevo evento creado: ${evento.titulo}!`
+      })
+    });
+
+    if (response.ok) {
+      console.log("✅ Notificación enviada exitosamente via Pipedream");
+    } else {
+      console.warn("⚠️ Error al enviar notificación via Pipedream:", response.status);
+    }
+  } catch (error) {
+    console.error("❌ Error al conectar con Pipedream:", error);
+  }
+}
+
+// =======================
 // MOSTRAR EVENTOS
 // =======================
 async function mostrarEventos() {
@@ -148,18 +182,20 @@ document.getElementById("formEditar").addEventListener("submit", async (e) => {
       body: JSON.stringify(evento)
     });
   } else {
-    // MODO AGREGAR
+    // MODO AGREGAR - Aquí se envía la notificación
     await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(evento)
     });
+    
+    // Enviar notificación via Pipedream solo cuando se crea un evento nuevo
+    await enviarNotificacionPipedream(evento);
   }
 
   cerrarModal();
   mostrarEventos();
 });
-
 
 // =======================
 // INICIAR APP

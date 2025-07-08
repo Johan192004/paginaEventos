@@ -1,51 +1,6 @@
 {
   "eventos": [
     {
-      "titulo": "Rock en el Parque",
-      "descripcion": "Una noche épica con las mejores bandas de rock local.",
-      "fecha": "2025-08-15",
-      "hora": "20:00",
-      "lugar": "Parque de los Pies Descalzos",
-      "imagen": "https://placehold.co/600x400/D3D3D3/000?text=Rock+en+el+Parque",
-      "estado": "activo",
-      "principal": false,
-      "createdAt": 1751941457421,
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
-      "principal": true
-    },
-    {
-      "id": "3",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "cancelado",
-      "principal": true
-    },
-    {
-      "id": "4",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
-      "principal": false
-    },
-    {
       "id": "5",
       "titulo": "Jazz al Aire Libre",
       "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
@@ -54,39 +9,6 @@
       "lugar": "Jardín Botánico",
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
       "estado": "inactivo",
-      "principal": false
-    },
-    {
-      "id": "6",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
-      "principal": false
-    },
-    {
-      "id": "7",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
-      "principal": false
-    },
-    {
-      "id": "8",
-      "titulo": "Jazz al Aire Libre",
-      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
-      "fecha": "2025-09-01",
-      "hora": "18:30",
-      "lugar": "Jardín Botánico",
-      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
       "principal": false
     },
     {
@@ -134,17 +56,6 @@
       "principal": false
     },
     {
-      "id": "2160",
-      "titulo": "Nuevo Evento",
-      "descripcion": "Descripción del nuevo evento.",
-      "fecha": "2025-07-08",
-      "hora": "00:00",
-      "lugar": "Lugar por definir",
-      "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
-      "estado": "activo",
-      "principal": false
-    },
-    {
       "id": "38aa",
       "titulo": "Nuevo Evento",
       "descripcion": "Descripción del nuevo evento.",
@@ -165,6 +76,54 @@
       "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
       "estado": "activo",
       "principal": false
+    },
+    {
+      "id": "0f59",
+      "titulo": "hola77",
+      "descripcion": "dcdzsczsdcz",
+      "fecha": "0012-12-12",
+      "hora": "00:12",
+      "lugar": "zxzdzcdxaz",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Evento",
+      "estado": "activo",
+      "principal": false,
+      "createdAt": 1752003862871
+    },
+    {
+      "id": "4592",
+      "titulo": "scsdcadc",
+      "descripcion": "sacscacs",
+      "fecha": "1211-03-12",
+      "hora": "12:12",
+      "lugar": "cadsczscs",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Evento",
+      "estado": "activo",
+      "principal": false,
+      "createdAt": 1752005040788
+    },
+    {
+      "id": "2023",
+      "titulo": "vallenato",
+      "descripcion": "xjsxhsjxa",
+      "fecha": "1212-12-12",
+      "hora": "00:34",
+      "lugar": "rio",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Evento",
+      "estado": "activo",
+      "principal": false,
+      "createdAt": 1752006288505
+    },
+    {
+      "id": "034c",
+      "titulo": "salsa",
+      "descripcion": "saxsaa",
+      "fecha": "11121-12-12",
+      "hora": "00:12",
+      "lugar": "dd vdxvdx",
+      "imagen": "https://placehold.co/600x400/EEE/000?text=Evento",
+      "estado": "activo",
+      "principal": false,
+      "createdAt": 1752007007505
     }
   ],
   "usuario": [
@@ -294,93 +253,139 @@
       "id": "e47e",
       "email": "julio@gmail.com",
       "fechaSuscripcion": "2025-07-08T02:46:37.585Z"
+    },
+    {
+      "id": "6f5c",
+      "email": "sjasajsa@gmail.com",
+      "fechaSuscripcion": "2025-07-08T19:41:28.091Z"
+    },
+    {
+      "id": "75b8",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "2025-07-08T19:42:11.834Z"
+    },
+    {
+      "id": "7500",
+      "email": "juan1234@gmail.com",
+      "fechaSuscripcion": "2025-07-08T19:42:24.175Z"
+    },
+    {
+      "id": "efa5",
+      "email": "dfeszcszcsa@gmail.com",
+      "fechaSuscripcion": "2025-07-08T19:42:41.215Z"
+    },
+    {
+      "id": "cf21",
+      "email": "hola2233@gmail.com",
+      "fechaSuscripcion": "2025-07-08T20:02:50.890Z"
+    },
+    {
+      "id": "3369",
+      "email": "asxascxasxsa@gmail.com",
+      "fechaSuscripcion": "2025-07-08T20:03:10.875Z"
+    },
+    {
+      "id": "c2d1",
+      "email": "cosasssssss@gmail.com",
+      "fechaSuscripcion": "2025-07-08T20:23:54.680Z"
+    },
+    {
+      "id": "6230",
+      "email": "holaporfin@gmail.com",
+      "fechaSuscripcion": "2025-07-08T20:31:38.374Z"
     }
   ],
   "mensajes": [
-  {
-    "id": "1",
-    "nombre": "Ana",
-    "correo": "ana@gmail.com",
-    "asunto": "consulta sobre el evento de jazz",
-    "mensaje": "Hola, quería saber si aún hay entradas disponibles para el evento del sábado."
-  },
-  {
-    "id": "2",
-    "nombre": "Carlos",
-    "correo": "carlos@hotmail.com",
-    "asunto": "pregunta sobre el horario",
-    "mensaje": "¿A qué hora comienza la función de cine el viernes?"
-  },
-  {
-    "id": "3",
-    "nombre": "Lucía",
-    "correo": "lucia@outlook.com",
-    "asunto": "información sobre talleres",
-    "mensaje": "Me interesa el taller de pintura, ¿podrías enviarme los requisitos?"
-  },
-  {
-    "id": "4",
-    "nombre": "Pedro",
-    "correo": "pedro@gmail.com",
-    "asunto": "problema con la inscripción",
-    "mensaje": "Intenté registrarme en el sitio web pero me da error. ¿Qué puedo hacer?"
-  },
-  {
-    "id": "5",
-    "nombre": "María",
-    "correo": "maria@yahoo.com",
-    "asunto": "solicitud de factura",
-    "mensaje": "Por favor, ¿pueden enviarme la factura de la compra realizada el 5 de julio?"
-  },
-  {
-    "id": "6",
-    "nombre": "Javier",
-    "correo": "javier123@gmail.com",
-    "asunto": "consulta sobre disponibilidad",
-    "mensaje": "¿Tienen cupos para el curso de fotografía avanzada?"
-  },
-  {
-    "id": "7",
-    "nombre": "Sofía",
-    "correo": "sofia@live.com",
-    "asunto": "agradecimiento",
-    "mensaje": "Gracias por el excelente servicio en el evento de ayer. Todo estuvo perfecto."
-  },
-  {
-    "id": "8",
-    "nombre": "Diego",
-    "correo": "diego_mz@hotmail.com",
-    "asunto": "recomendación musical",
-    "mensaje": "¿Podrían recomendarme bandas similares a las que tocaron en el festival?"
-  },
-  {
-    "id": "9",
-    "nombre": "Valentina",
-    "correo": "valen.arte@gmail.com",
-    "asunto": "pregunta sobre materiales",
-    "mensaje": "¿El curso de escultura incluye los materiales o hay que llevarlos?"
-  },
-  {
-    "id": "10",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  },
     {
-    "id": "11",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  },
+      "id": "1",
+      "nombre": "Ana",
+      "correo": "ana@gmail.com",
+      "asunto": "consulta sobre el evento de jazz",
+      "mensaje": "Hola, quería saber si aún hay entradas disponibles para el evento del sábado."
+    },
     {
-    "id": "12",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  }
-]
-
+      "id": "2",
+      "nombre": "Carlos",
+      "correo": "carlos@hotmail.com",
+      "asunto": "pregunta sobre el horario",
+      "mensaje": "¿A qué hora comienza la función de cine el viernes?"
+    },
+    {
+      "id": "3",
+      "nombre": "Lucía",
+      "correo": "lucia@outlook.com",
+      "asunto": "información sobre talleres",
+      "mensaje": "Me interesa el taller de pintura, ¿podrías enviarme los requisitos?"
+    },
+    {
+      "id": "4",
+      "nombre": "Pedro",
+      "correo": "pedro@gmail.com",
+      "asunto": "problema con la inscripción",
+      "mensaje": "Intenté registrarme en el sitio web pero me da error. ¿Qué puedo hacer?"
+    },
+    {
+      "id": "5",
+      "nombre": "María",
+      "correo": "maria@yahoo.com",
+      "asunto": "solicitud de factura",
+      "mensaje": "Por favor, ¿pueden enviarme la factura de la compra realizada el 5 de julio?"
+    },
+    {
+      "id": "6",
+      "nombre": "Javier",
+      "correo": "javier123@gmail.com",
+      "asunto": "consulta sobre disponibilidad",
+      "mensaje": "¿Tienen cupos para el curso de fotografía avanzada?"
+    },
+    {
+      "id": "7",
+      "nombre": "Sofía",
+      "correo": "sofia@live.com",
+      "asunto": "agradecimiento",
+      "mensaje": "Gracias por el excelente servicio en el evento de ayer. Todo estuvo perfecto."
+    },
+    {
+      "id": "8",
+      "nombre": "Diego",
+      "correo": "diego_mz@hotmail.com",
+      "asunto": "recomendación musical",
+      "mensaje": "¿Podrían recomendarme bandas similares a las que tocaron en el festival?"
+    },
+    {
+      "id": "9",
+      "nombre": "Valentina",
+      "correo": "valen.arte@gmail.com",
+      "asunto": "pregunta sobre materiales",
+      "mensaje": "¿El curso de escultura incluye los materiales o hay que llevarlos?"
+    },
+    {
+      "id": "10",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    },
+    {
+      "id": "11",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    },
+    {
+      "id": "12",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    },
+    {
+      "id": "ba06",
+      "nombre": "brahiam",
+      "correo": "brahiamruiz1123756@correo.itm.edu.co",
+      "asunto": "dsvsdvdsx",
+      "mensaje": "cvsdvsdzsvz"
+    }
+  ]
 }
