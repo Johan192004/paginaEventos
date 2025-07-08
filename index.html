@@ -10,6 +10,98 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        .navbar {
+            background: linear-gradient(90deg, #c70039 0%, #f39c12 30%, #7FDBFF 70%, #8e44ad 100%) !important;
+        }
+
+        .navbar .navbar-brand img {
+            max-height: 180px;
+            width: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 12px #c70039) drop-shadow(0 0px 8px #8e44ad);
+            background: #fff;
+            border-radius: 24px;
+            padding: 10px 32px;
+            box-shadow: 0 4px 24px #c7003933;
+        }
+
+        .navbar .nav-link,
+        .navbar .btn-dark {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .navbar .nav-link.active,
+        .navbar .nav-link:hover {
+            color: #c70039 !important;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-red-section {
+            background: linear-gradient(135deg, #c70039 0%, #f39c12 50%, #8e44ad 100%);
+            color: #fff;
+        }
+
+        .btn-danger,
+        .btn-dark {
+            background: #c70039;
+            border-color: #c70039;
+        }
+
+        .btn-danger:hover,
+        .btn-dark:hover {
+            background: #8e44ad;
+            border-color: #8e44ad;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #7FDBFF 0%, #f39c12 100%);
+            color: #222;
+            border: none;
+        }
+
+        .card-title {
+            color: #c70039;
+            font-weight: bold;
+        }
+
+        .card-body .btn-danger {
+            background: #c70039;
+            border-color: #c70039;
+            color: #fff;
+        }
+
+        .card-body .btn-danger:hover {
+            background: #8e44ad;
+            border-color: #8e44ad;
+        }
+
+        footer.bg-dark {
+            background: linear-gradient(90deg, #c70039 0%, #f39c12 50%, #8e44ad 100%) !important;
+            color: #fff;
+        }
+
+        .modal-content {
+            background: #fff;
+            border: 2px solid #c70039;
+        }
+
+        .modal-title {
+            color: #c70039;
+        }
+
+        #scrollTopBtn {
+            background: #f39c12;
+            color: #fff;
+            border: none;
+        }
+
+        #scrollTopBtn:hover {
+            background: #c70039;
+        }
+
         .bg-red-section {
             background-color: #0599b3;
             color: white;
@@ -17,18 +109,11 @@
             padding-bottom: 50px;
         }
 
-        /* Estilos del carrusel principal */
-        #heroCarousel {
-            height: 80vh; /* Altura de la vista */
-            min-height: 450px;
-            overflow: hidden;
-        }
-        #heroCarousel .carousel-inner {
-            height: 100%;
-        }
         .event-carousel-img {
-            height: 600px; /* Altura sugerida para el carrusel principal */
+            height: 600px;
+            /* Altura sugerida para el carrusel principal */
             object-fit: cover;
+            width: 100%;
         }
 
         #scrollTopBtn {
@@ -38,28 +123,25 @@
             z-index: 99;
             display: none;
         }
+
         /* Añadido/Ajustado para las tarjetas de "Más Eventos" */
         .card {
-            background-color: #343a40; /* Fondo oscuro */
+            background-color: #343a40;
+            /* Fondo oscuro */
             color: white;
             border: none;
-            height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
         }
 
         .card-body .btn-danger {
-            background-color: #9d1c24; /* Color rojo de tu diseño original para el botón */
+            background-color: #9d1c24;
+            /* Color rojo de tu diseño original para el botón */
             border-color: #9d1c24;
-            color: white;
-        }
-        .card-body .btn-danger:hover {
-            background-color: #7a161c;
-            border-color: #7a161c;
         }
 
         .card-img-top {
-            height: 200px; /* Altura fija para las imágenes de las tarjetas */
+            height: 200px;
+            /* Altura fija para las imágenes de las tarjetas */
             object-fit: cover;
-            width: 100%;
         }
 
         .card-body {
@@ -68,13 +150,14 @@
         }
 
         .card-text {
-            flex-grow: 1; /* Para que el texto ocupe espacio y el botón se alinee abajo */
+            flex-grow: 1;
+            /* Para que el texto ocupe espacio y el botón se alinee abajo */
         }
 
         .btn.mt-auto {
-            margin-top: auto; /* Alinea el botón al final de la card */
+            margin-top: auto;
+            /* Alinea el botón al final de la card */
         }
-
     </style>
 </head>
 
@@ -104,8 +187,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-dark" href="admin.html">Login</a>
-                    </li>
+                        <a class="btn btn-dark" href="admin.html">Login</a> </li>
                 </ul>
             </div>
         </div>
@@ -232,22 +314,18 @@
                     <h4>SUSCRÍBETE</h4>
                     <p>Recibe notificaciones de nuestros próximos eventos.</p>
                     <form id="subscribeForm" class="d-flex justify-content-center">
-                        <input type="email" class="form-control w-50 me-2" placeholder="tu.correo@ejemplo.com" id="subscribeEmail" required> <button class="btn btn-danger" type="submit">Suscribirse</button>
+                        <input type="email" class="form-control w-50 me-2" placeholder="tu.correo@ejemplo.com"
+                            id="subscribeEmail" required> <button class="btn btn-danger" type="submit">Suscribirse</button>
                     </form>
                 </div>
             </div>
             <hr>
             <div class="row mt-4">
                 <div class="col">
-                    <h5>INFORMACIÓN DE INTERES</h5>
-                    <p>Siguenos en todas nuestras redes sociales</p>
-                    <div class="social-icons mb-3">
-                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-                    </div>
-                    <p>DoReMiFa@gmail.com</p>
-                    <p>© 2025 DoReMiFa S.A.S Todos los derechos reservados.</p>
+                    <h5>INFORMACIÓN</h5>
+                    <p>Añade aquí información de contacto, enlaces a redes sociales, etc.</p>
+                    <p>hola@unsitiogenial.es</p>
+                    <p>© 2025 Tu Empresa. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
