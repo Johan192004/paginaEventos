@@ -229,28 +229,39 @@ if (contactForm) {
 }
 
 // Ejecutar al cargar el DOM
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async() => {
     cargarEventosYActualizarIU();
+
+    let campoNombre = document.getElementById("nombre")
+    let campoCorreo = document.getElementById("correo")
+    let campoAsunto = document.getElementById("asunto")
+    let campoMensaje = document.getElementById("mensaje")
+
+    let botonEnviar = document.querySelector(".sendMessage")
+    
+    botonEnviar.addEventListener("click",()=>{
+        mandarMensaje(campoNombre.value,campoCorreo.value,campoAsunto.value,campoMensaje.value)
+    })
+
 });
 
 
-async function mandarMensaje(){
-    let nombre;
-    let correo; 
-    let asunto;
-    let mensaje;
 
-    let url = obtenerUrlActual()
-    indexSlash = url.indexOf("/")
-    url = url.splice(indexSlash)
-    url = url + "/mensajes"
+
+async function mandarMensaje(name_,email_,matter_,message_){
+    let nombre = name_;
+    let correo = email_; 
+    let asunto = matter_;
+    let mensaje = message_;
 
     let URLBd = "http://localhost:3000"
     URLBd = URLBd + "/mensajes"
 
     await fetch(URLBd,{
             "method":"POST",
-            "Content-Type" : "application/json",
+            "headers": {
+                "Content-Type" : "application/json",
+            },
             "body": JSON.stringify({
                 "nombre": nombre,
                 "correo": correo,
