@@ -21,7 +21,7 @@
       "lugar": "Jardín Botánico",
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
       "estado": "activo",
-      "principal": true
+      "principal": false
     },
     {
       "id": "3",
@@ -32,7 +32,7 @@
       "lugar": "Jardín Botánico",
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
       "estado": "cancelado",
-      "principal": true
+      "principal": false
     },
     {
       "id": "4",
@@ -165,6 +165,42 @@
       "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
       "estado": "activo",
       "principal": false
+    },
+    {
+      "titulo": "ndjkasndkjasn",
+      "descripcion": "nkjsndakjndkjsan",
+      "fecha": "2025-07-11",
+      "hora": "14:13",
+      "lugar": "fsdsdfsdfsdffsdfsdfsdfdsfsd",
+      "imagen": "https://res.cloudinary.com/dxsxlcgby/image/upload/v1752006489/rhtdxusc25jkyjdryhwy.png",
+      "estado": "activo",
+      "principal": true,
+      "createdAt": 1752006491932,
+      "id": "7GDCBsN"
+    },
+    {
+      "titulo": "dasdsa",
+      "descripcion": "fdsfdsfdsf",
+      "fecha": "275760-03-14",
+      "hora": "02:13",
+      "lugar": "dfsdsfsfdgdfvsdv",
+      "imagen": "https://res.cloudinary.com/dxsxlcgby/image/upload/v1752006765/iel0jlfio9c0pkkjv7os.jpg",
+      "estado": "activo",
+      "principal": true,
+      "createdAt": 1752006767970,
+      "id": "-vTO4GB"
+    },
+    {
+      "titulo": "dsandkjasndkjn",
+      "descripcion": "lkdsankdjnsakjdnkjsandkj",
+      "fecha": "2025-07-17",
+      "hora": "12:34",
+      "lugar": "dasdasdfadfdsa",
+      "imagen": "https://res.cloudinary.com/dxsxlcgby/image/upload/v1752007290/pmnxetxvzfryzy9kbosq.png",
+      "estado": "activo",
+      "principal": true,
+      "createdAt": 1752007293433,
+      "id": "wq7TkS-"
     }
   ],
   "usuario": [
@@ -297,90 +333,89 @@
     }
   ],
   "mensajes": [
-  {
-    "id": "1",
-    "nombre": "Ana",
-    "correo": "ana@gmail.com",
-    "asunto": "consulta sobre el evento de jazz",
-    "mensaje": "Hola, quería saber si aún hay entradas disponibles para el evento del sábado."
-  },
-  {
-    "id": "2",
-    "nombre": "Carlos",
-    "correo": "carlos@hotmail.com",
-    "asunto": "pregunta sobre el horario",
-    "mensaje": "¿A qué hora comienza la función de cine el viernes?"
-  },
-  {
-    "id": "3",
-    "nombre": "Lucía",
-    "correo": "lucia@outlook.com",
-    "asunto": "información sobre talleres",
-    "mensaje": "Me interesa el taller de pintura, ¿podrías enviarme los requisitos?"
-  },
-  {
-    "id": "4",
-    "nombre": "Pedro",
-    "correo": "pedro@gmail.com",
-    "asunto": "problema con la inscripción",
-    "mensaje": "Intenté registrarme en el sitio web pero me da error. ¿Qué puedo hacer?"
-  },
-  {
-    "id": "5",
-    "nombre": "María",
-    "correo": "maria@yahoo.com",
-    "asunto": "solicitud de factura",
-    "mensaje": "Por favor, ¿pueden enviarme la factura de la compra realizada el 5 de julio?"
-  },
-  {
-    "id": "6",
-    "nombre": "Javier",
-    "correo": "javier123@gmail.com",
-    "asunto": "consulta sobre disponibilidad",
-    "mensaje": "¿Tienen cupos para el curso de fotografía avanzada?"
-  },
-  {
-    "id": "7",
-    "nombre": "Sofía",
-    "correo": "sofia@live.com",
-    "asunto": "agradecimiento",
-    "mensaje": "Gracias por el excelente servicio en el evento de ayer. Todo estuvo perfecto."
-  },
-  {
-    "id": "8",
-    "nombre": "Diego",
-    "correo": "diego_mz@hotmail.com",
-    "asunto": "recomendación musical",
-    "mensaje": "¿Podrían recomendarme bandas similares a las que tocaron en el festival?"
-  },
-  {
-    "id": "9",
-    "nombre": "Valentina",
-    "correo": "valen.arte@gmail.com",
-    "asunto": "pregunta sobre materiales",
-    "mensaje": "¿El curso de escultura incluye los materiales o hay que llevarlos?"
-  },
-  {
-    "id": "10",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  },
     {
-    "id": "11",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  },
+      "id": "1",
+      "nombre": "Ana",
+      "correo": "ana@gmail.com",
+      "asunto": "consulta sobre el evento de jazz",
+      "mensaje": "Hola, quería saber si aún hay entradas disponibles para el evento del sábado."
+    },
     {
-    "id": "12",
-    "nombre": "Esteban",
-    "correo": "esteban.89@outlook.com",
-    "asunto": "error en el sitio",
-    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
-  }
-]
-
+      "id": "2",
+      "nombre": "Carlos",
+      "correo": "carlos@hotmail.com",
+      "asunto": "pregunta sobre el horario",
+      "mensaje": "¿A qué hora comienza la función de cine el viernes?"
+    },
+    {
+      "id": "3",
+      "nombre": "Lucía",
+      "correo": "lucia@outlook.com",
+      "asunto": "información sobre talleres",
+      "mensaje": "Me interesa el taller de pintura, ¿podrías enviarme los requisitos?"
+    },
+    {
+      "id": "4",
+      "nombre": "Pedro",
+      "correo": "pedro@gmail.com",
+      "asunto": "problema con la inscripción",
+      "mensaje": "Intenté registrarme en el sitio web pero me da error. ¿Qué puedo hacer?"
+    },
+    {
+      "id": "5",
+      "nombre": "María",
+      "correo": "maria@yahoo.com",
+      "asunto": "solicitud de factura",
+      "mensaje": "Por favor, ¿pueden enviarme la factura de la compra realizada el 5 de julio?"
+    },
+    {
+      "id": "6",
+      "nombre": "Javier",
+      "correo": "javier123@gmail.com",
+      "asunto": "consulta sobre disponibilidad",
+      "mensaje": "¿Tienen cupos para el curso de fotografía avanzada?"
+    },
+    {
+      "id": "7",
+      "nombre": "Sofía",
+      "correo": "sofia@live.com",
+      "asunto": "agradecimiento",
+      "mensaje": "Gracias por el excelente servicio en el evento de ayer. Todo estuvo perfecto."
+    },
+    {
+      "id": "8",
+      "nombre": "Diego",
+      "correo": "diego_mz@hotmail.com",
+      "asunto": "recomendación musical",
+      "mensaje": "¿Podrían recomendarme bandas similares a las que tocaron en el festival?"
+    },
+    {
+      "id": "9",
+      "nombre": "Valentina",
+      "correo": "valen.arte@gmail.com",
+      "asunto": "pregunta sobre materiales",
+      "mensaje": "¿El curso de escultura incluye los materiales o hay que llevarlos?"
+    },
+    {
+      "id": "10",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    },
+    {
+      "id": "11",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    },
+    {
+      "id": "12",
+      "nombre": "Esteban",
+      "correo": "esteban.89@outlook.com",
+      "asunto": "error en el sitio",
+      "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+    }
+  ]
 }

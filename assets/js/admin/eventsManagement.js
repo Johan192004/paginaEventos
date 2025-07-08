@@ -4,14 +4,19 @@ let eventosPorPagina = 2;
 let paginaActual = 1;
 let filtroBusqueda = "";
 
+//&_limit=${eventosPorPagina}&_page=${paginaActual}
+
 // =======================
 // MOSTRAR EVENTOS
 // =======================
+
+
+
 async function mostrarEventos() {
   const contenedor = document.querySelector(".eventos .row");
   contenedor.innerHTML = "";
 
-  const res = await fetch(`${API_URL}?q=${filtroBusqueda}&_sort=createdAt&_order=desc&_limit=${eventosPorPagina}&_page=${paginaActual}`);
+  const res = await fetch(`${API_URL}?q=${filtroBusqueda}&_sort=createdAt&_order=desc`);
   const eventos = await res.json();
 
   eventos.forEach(evento => {
@@ -53,7 +58,42 @@ async function mostrarEventos() {
     `;
 
     contenedor.appendChild(col);
+    
+
   });
+
+  let campoPrincipal = document.getElementById("editarPrincipal")
+  console.log(campoPrincipal)
+
+  campoPrincipal.addEventListener("change",()=>{
+      console.log(campoPrincipal.value)
+      if(campoPrincipal.value == "si"){
+        
+
+        let eventosPrincipales = eventos.filter(e => e.principal == true)
+        
+        if((eventosPrincipales).length >= 3){
+
+          if(!document.getElementById("titulosEventos")){
+            console.log("Ya existe el campo de los titulos de los eventos")
+          } else {
+            let divSacarPrincipal = document.createElement("div")
+            divSacarPrincipal.innerHTML = `<label>Seleccione un evento que dejara de ser principal</label>
+            <select id="titulosEventos" class="form-select" required>
+                          <option value="0">${eventosPrincipales[0].titulo}</option>
+                          <option value="1">${eventosPrincipales[1].titulo}</option>
+                          <option value="2">${eventosPrincipales[2].titulo}</option>
+                      </select>`
+
+            campoPrincipal.closest("div").appendChild(divSacarPrincipal)
+          }
+
+          
+
+        }       
+      } 
+        
+    })
 }
 
 // =======================
@@ -128,36 +168,67 @@ document.getElementById("formEditar").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const id = document.getElementById("editarId").value;
-  const evento = {
-    titulo: document.getElementById("editarTitulo").value,
-    descripcion: document.getElementById("editarDescripcion").value,
-    fecha: document.getElementById("editarFecha").value,
-    hora: document.getElementById("editarHora").value,
-    lugar: document.getElementById("editarLugar").value,
-    imagen: document.getElementById("editarImagen").value || "https://placehold.co/600x400/EEE/000?text=Evento",
-    estado: document.getElementById("editarEstado").value,
-    principal: false,
-    createdAt: Date.now()
-  };
-
-  if (id) {
-    // MODO EDITAR
-    await fetch(`${API_URL}/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(evento)
-    });
-  } else {
-    // MODO AGREGAR
-    await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(evento)
-    });
+  const archivo = document.getElementById('fileInput').files[0];
+  if (!archivo) {
+        alert("Por favor selecciona una imagen.");
+        return;
   }
 
-  cerrarModal();
-  mostrarEventos();
+  const formData = new FormData();
+  formData.append('file', archivo);
+  formData.append('upload_preset', 'demo_unsigned');
+
+  try {
+        const respuesta = await fetch('https://api.cloudinary.com/v1_1/dxsxlcgby/image/upload', {
+          method: 'POST',
+          body: formData
+        });
+
+        const datos = await respuesta.json();
+
+        if (datos.secure_url) {
+          console.log(datos.secure_url)
+          const evento = {
+            titulo: document.getElementById("editarTitulo").value,
+            descripcion: document.getElementById("editarDescripcion").value,
+            fecha: document.getElementById("editarFecha").value,
+            hora: document.getElementById("editarHora").value,
+            lugar: document.getElementById("editarLugar").value,
+            imagen: `${datos.secure_url}` || "https://placehold.co/600x400/EEE/000?text=Evento",
+            estado: document.getElementById("editarEstado").value,
+            principal: false,
+            createdAt: Date.now()
+          };
+
+          if (id) {
+            // MODO EDITAR
+            await fetch(`${API_URL}/${id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(evento)
+            });
+          } else {
+            // MODO AGREGAR
+            await fetch(API_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(evento)
+            });
+          }
+
+          cerrarModal();
+          mostrarEventos();
+        } else {
+          console.error("Error en la respuesta:", datos);
+          alert("Ocurrió un error al subir la imagen.");
+        }
+
+      } catch (error) {
+        console.error("Error de red:", error);
+        alert("No se pudo subir la imagen. Intenta nuevamente.");
+      }
+
+  
 });
 
 
