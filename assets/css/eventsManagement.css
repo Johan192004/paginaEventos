@@ -170,26 +170,72 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding: 1rem;
 }
 
-.estado {
+.descripcion-card .titulo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion-card .descripcion {
+  font-style: italic;
+  color: #333;
+  flex-grow: 1;
+}
+
+.descripcion-card .descripcion a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.descripcion-card .descripcion a:hover {
+  text-decoration: underline;
+}
+
+.descripcion-card .estado {
   color: red;
-  writing-mode: vertical-rl;
+  writing-mode: horizontal-tb;
   text-orientation: mixed;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
   align-self: flex-start;
 }
 
-.titulo {
+.estado-tag {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
-.descripcion {
-  margin-top: auto;
-  font-style: italic;
+.estado-tag.activo {
+  background-color: var(--verde-menta);
+  color: #000;
+}
+
+.estado-tag.inactivo {
+  background-color: var(--lavanda);
+  color: #000;
+}
+
+/* ============================
+   - BOTON EDITAR
+============================= */
+.btn-outline-primary {
+  border-color: var(--lavanda);
+  color: var(--texto);
+  background-color: var(--lavanda);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--azul-pastel);
+  color: #000;
+  border-color: var(--azul-pastel);
 }
 
 /* ============================
