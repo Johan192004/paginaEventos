@@ -1,3 +1,4 @@
+
 // URL de la API de eventos (JSON Server)
 const API_URL_EVENTOS = 'http://localhost:3000/eventos'; 
 // URL del backend Express para suscripciones y notificaciones
@@ -39,10 +40,12 @@ async function cargarEventosYActualizarIU() {
         const eventos = await response.json();
 
         // Filtrar eventos activos y ordenar por fecha
-        const eventosActivos = eventos.filter(e => e.estado === 'activo' && e.principal == true)
+        const eventosActivos = eventos.filter(e => e.estado === 'activo')
                                      .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
 
-        const eventosPrincipales = eventosActivos.slice(0, 3);
+        const eventosActivosPrincipales = eventos.filter(a => a.principal == true && a.estado === "activo").sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
+
+        const eventosPrincipales = eventosActivosPrincipales.slice(0, 3);
         const eventosAdicionales = eventosActivos.slice(3);
 
         // Actualizamos carrusel principal
