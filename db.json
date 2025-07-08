@@ -31,7 +31,7 @@
       "hora": "18:30",
       "lugar": "Jardín Botánico",
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
+      "estado": "cancelado",
       "principal": true
     },
     {
@@ -53,7 +53,7 @@
       "hora": "18:30",
       "lugar": "Jardín Botánico",
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
-      "estado": "activo",
+      "estado": "inactivo",
       "principal": false
     },
     {
@@ -297,19 +297,90 @@
     }
   ],
   "mensajes": [
+  {
+    "id": "1",
+    "nombre": "Ana",
+    "correo": "ana@gmail.com",
+    "asunto": "consulta sobre el evento de jazz",
+    "mensaje": "Hola, quería saber si aún hay entradas disponibles para el evento del sábado."
+  },
+  {
+    "id": "2",
+    "nombre": "Carlos",
+    "correo": "carlos@hotmail.com",
+    "asunto": "pregunta sobre el horario",
+    "mensaje": "¿A qué hora comienza la función de cine el viernes?"
+  },
+  {
+    "id": "3",
+    "nombre": "Lucía",
+    "correo": "lucia@outlook.com",
+    "asunto": "información sobre talleres",
+    "mensaje": "Me interesa el taller de pintura, ¿podrías enviarme los requisitos?"
+  },
+  {
+    "id": "4",
+    "nombre": "Pedro",
+    "correo": "pedro@gmail.com",
+    "asunto": "problema con la inscripción",
+    "mensaje": "Intenté registrarme en el sitio web pero me da error. ¿Qué puedo hacer?"
+  },
+  {
+    "id": "5",
+    "nombre": "María",
+    "correo": "maria@yahoo.com",
+    "asunto": "solicitud de factura",
+    "mensaje": "Por favor, ¿pueden enviarme la factura de la compra realizada el 5 de julio?"
+  },
+  {
+    "id": "6",
+    "nombre": "Javier",
+    "correo": "javier123@gmail.com",
+    "asunto": "consulta sobre disponibilidad",
+    "mensaje": "¿Tienen cupos para el curso de fotografía avanzada?"
+  },
+  {
+    "id": "7",
+    "nombre": "Sofía",
+    "correo": "sofia@live.com",
+    "asunto": "agradecimiento",
+    "mensaje": "Gracias por el excelente servicio en el evento de ayer. Todo estuvo perfecto."
+  },
+  {
+    "id": "8",
+    "nombre": "Diego",
+    "correo": "diego_mz@hotmail.com",
+    "asunto": "recomendación musical",
+    "mensaje": "¿Podrían recomendarme bandas similares a las que tocaron en el festival?"
+  },
+  {
+    "id": "9",
+    "nombre": "Valentina",
+    "correo": "valen.arte@gmail.com",
+    "asunto": "pregunta sobre materiales",
+    "mensaje": "¿El curso de escultura incluye los materiales o hay que llevarlos?"
+  },
+  {
+    "id": "10",
+    "nombre": "Esteban",
+    "correo": "esteban.89@outlook.com",
+    "asunto": "error en el sitio",
+    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+  },
     {
-      "id": "1",
-      "nombre": "Ana",
-      "correo": "ana@gmail.com",
-      "asunto": "consulta sobre el evento de jazz",
-      "mensaje": "sjbcdscb sdcb nsdc ndsm sm"
-    },
+    "id": "11",
+    "nombre": "Esteban",
+    "correo": "esteban.89@outlook.com",
+    "asunto": "error en el sitio",
+    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+  },
     {
-      "id": "fe14",
-      "nombre": "pedro",
-      "correo": "pedro@gmail.com",
-      "asunto": "jugar",
-      "mensaje": "hola quisiera averiguar para hacer un evento"
-    }
-  ]
+    "id": "12",
+    "nombre": "Esteban",
+    "correo": "esteban.89@outlook.com",
+    "asunto": "error en el sitio",
+    "mensaje": "Detecté un enlace roto en la sección de actividades. ¿Podrían revisarlo?"
+  }
+]
+
 }
