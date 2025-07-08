@@ -21,7 +21,83 @@
       "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
       "estado": "activo",
       "principal": true
-      
+    },
+    {
+      "id": "3",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": true
+    },
+    {
+      "id": "4",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "5",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "6",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "7",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "8",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
+    },
+    {
+      "id": "9",
+      "titulo": "Jazz al Aire Libre",
+      "descripcion": "Disfruta de una tarde de jazz bajo las estrellas.",
+      "fecha": "2025-09-01",
+      "hora": "18:30",
+      "lugar": "Jardín Botánico",
+      "imagen": "https://placehold.co/600x400/C0C0C0/000?text=Jazz",
+      "estado": "activo",
+      "principal": false
     }
   ],
   "usuario": [
@@ -31,21 +107,143 @@
       "password": "password1"
     }
   ],
-
   "suscriptores": [
     {
       "id": "1",
       "email": "juan@gmail.com",
       "fechaSuscripcion": "10-04-2025"
     },
-     {
+    {
       "id": "2",
       "email": "pedro@gmail.com",
       "fechaSuscripcion": "15-04-2025"
+    },
+    {
+      "id": "70cb",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:02:45.744Z"
+    },
+    {
+      "id": "5ddd",
+      "email": "johan123@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:15:35.892Z"
+    },
+    {
+      "id": "f2d7",
+      "email": "juan1234@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:37:52.733Z"
+    },
+    {
+      "id": "16c2",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:37:59.105Z"
+    },
+    {
+      "id": "7d44",
+      "email": "juan1234@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:38:39.349Z"
+    },
+    {
+      "id": "b51e",
+      "email": "johan1235@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:39:00.636Z"
+    },
+    {
+      "id": "a936",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:44:11.083Z"
+    },
+    {
+      "id": "18a6",
+      "email": "juan1234@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:48:42.601Z"
+    },
+    {
+      "id": "a1b9",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:52:12.096Z"
+    },
+    {
+      "id": "d722",
+      "email": "juan1234@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:53:06.205Z"
+    },
+    {
+      "id": "dd09",
+      "email": "johan1235@gmail.com",
+      "fechaSuscripcion": "2025-07-07T04:53:17.950Z"
+    },
+    {
+      "id": "1199",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T20:57:22.803Z"
+    },
+    {
+      "id": "6af3",
+      "email": "johan1235@gmail.com",
+      "fechaSuscripcion": "2025-07-07T20:58:10.547Z"
+    },
+    {
+      "id": "1d61",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:18:05.678Z"
+    },
+    {
+      "id": "af1c",
+      "email": "caballo@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:25:04.631Z"
+    },
+    {
+      "id": "b104",
+      "email": "johan123@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:26:41.901Z"
+    },
+    {
+      "id": "3fad",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:27:43.925Z"
+    },
+    {
+      "id": "264c",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:40:06.360Z"
+    },
+    {
+      "id": "833f",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:41:23.823Z"
+    },
+    {
+      "id": "a7e2",
+      "email": "johan1235@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:42:13.236Z"
+    },
+    {
+      "id": "6e52",
+      "email": "daniel@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:50:25.059Z"
+    },
+    {
+      "id": "5275",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:51:03.211Z"
+    },
+    {
+      "id": "b387",
+      "email": "brahiam@gmail.com",
+      "fechaSuscripcion": "2025-07-07T22:52:17.279Z"
+    },
+    {
+      "id": "0a68",
+      "email": "pedro@gmail.com",
+      "fechaSuscripcion": "2025-07-07T23:00:47.358Z"
+    },
+    {
+      "id": "6681",
+      "email": "sajsbajsa@gmail.com",
+      "fechaSuscripcion": "2025-07-07T23:13:50.871Z"
     }
-
   ],
-
   "mensajes": [
     {
       "id": "1",
@@ -56,4 +254,3 @@
     }
   ]
 }
-

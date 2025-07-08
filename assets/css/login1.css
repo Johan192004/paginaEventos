@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #a822dd;
-  --secondary-color: #7b21af;
+  --primary-color: #C70039;
+  --secondary-color: #F39C12;
   --success-color: rgb(25, 135, 84);
   --info-color: #81b9f1;
   --warning-color: #ffc107;
@@ -18,7 +18,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   height: 100vh;
-  background: linear-gradient(-45deg, #a822dd, #81b9f1, #b65198, #10f11b);
+  background: linear-gradient(-45deg, #C70039, #F39C12, #7FDBFF, #8E44AD);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
   display: flex;

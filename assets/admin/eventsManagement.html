@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestion Eventos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/eventsManagement.css">
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <!-- Seccion Principal -->
+             <div class="col py-4">
+                <!-- Barra de busqueda + selector -->
+                 <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <div class="input-group search-bar">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="BUSCAR POR NOMBRE">
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="eventCount" class="form-label mb-0 fw-bold">Eventos por Pagina:</label>
+                        <select id="eventCount" class="form-select evento-selector">
+                            <option value="2">2</option>         
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                 </div>
+
+                 <!-- Tarjetas de eventos -->
+                  <div class="eventos">
+                    <div class="row gy-4">
+                        <!-- Tarjeta -->
+                         <div class="col-12 d-flex align-items-start">
+                            <div class="card imagen-card me-2">
+                                <img src="" class="card-img-top" alt="imagen evento">
+                                <div class="card-body text-center">
+                                    <strong>IMAGEN</strong>
+                                    <div class="plus-icon">+</div>
+                                </div>
+                            </div>
+                            <div class="card descripcion-card">
+                                <div class="card-body">
+                                    <p class="estado">Estado <br>(Fecha)</p>
+                                    <h5 class="titulo">Titulo</h5>
+                                    <p class="descripcion">Descripcion <br> Editar </p>
+                                </div>
+                            </div>
+                         </div>
+                         <!-- Fin de tarjeta -->
+                    </div>
+
+                    <!-- Boton agregar -->
+                     <div class="text-center mt-4">
+                        <button class="btn btn-agregar">agregar</button>
+                     </div>
+                  </div>
+             </div>
+
+             <!-- Barra lateral derecha -->
+               <aside class="sidebar p-4 d-flex flex-column text-center text-white">
+                    <div class="logo mb-4">
+                        <img src="../img/Black White Minimalist Professional Initial Logo (1).png" alt="Logo DoReMiFa" class="img-fluid mb-2" />
+                        <p class="small">Anthony Martinez</p>
+                        </div>
+                        <h4 class="fw-bold">ADMIN</h4>
+                        <hr class="border-light" />
+                        <nav class="nav flex-column">
+                        <a href="../admin/desktop.html" class="nav-link text-white">Escritorio</a>
+                        <a href="../admin/subscriptions.html" class="nav-link text-white">Suscripciones</a>
+                        <a href="../admin/eventsManagement.html" class="nav-link text-white">Gestion Eventos</a>
+                        <a href="../admin/contact.html" class="nav-link active">Contacto</a>
+                        </nav>
+                        <div class="mt-auto">
+                        <a href="../admin/login.html" class="btn btn-outline-light btn-sm">SALIR</a>
+                    </div>
+         </aside>
+        </div>
+    </div>
 </body>
 </html>
