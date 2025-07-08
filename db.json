@@ -165,18 +165,6 @@
       "imagen": "https://placehold.co/600x400/EEE/000?text=Nuevo+Evento",
       "estado": "activo",
       "principal": false
-    },
-    {
-      "id": "f933",
-      "titulo": "aSD",
-      "descripcion": "ASDCsa",
-      "fecha": "2025-07-02",
-      "hora": "21:25",
-      "lugar": "sadxsa",
-      "imagen": "https://img.freepik.com/foto-gratis/vista-posterior-multitud-fans-viendo-actuaciones-directo-concierto-musica-noche-copiar-espacio_637285-544.jpg?semt=ais_hybrid&w=740",
-      "estado": "inactivo",
-      "principal": false,
-      "createdAt": 1751941477109
     }
   ],
   "usuario": [
@@ -188,29 +176,9 @@
   ],
   "suscriptores": [
     {
-      "id": "1",
-      "email": "juan@gmail.com",
-      "fechaSuscripcion": "10-04-2025"
-    },
-    {
-      "id": "2",
-      "email": "pedro@gmail.com",
-      "fechaSuscripcion": "15-04-2025"
-    },
-    {
-      "id": "70cb",
-      "email": "brahiam@gmail.com",
-      "fechaSuscripcion": "2025-07-07T04:02:45.744Z"
-    },
-    {
       "id": "5ddd",
       "email": "johan123@gmail.com",
       "fechaSuscripcion": "2025-07-07T04:15:35.892Z"
-    },
-    {
-      "id": "f2d7",
-      "email": "juan1234@gmail.com",
-      "fechaSuscripcion": "2025-07-07T04:37:52.733Z"
     },
     {
       "id": "16c2",
@@ -321,6 +289,11 @@
       "id": "6681",
       "email": "sajsbajsa@gmail.com",
       "fechaSuscripcion": "2025-07-07T23:13:50.871Z"
+    },
+    {
+      "id": "e47e",
+      "email": "julio@gmail.com",
+      "fechaSuscripcion": "2025-07-08T02:46:37.585Z"
     }
   ],
   "mensajes": [
