@@ -183,7 +183,7 @@ async function editarEvento(id) {
   document.getElementById("editarHora").value = evento.hora || "00:00";
   document.getElementById("editarLugar").value = evento.lugar;
   document.getElementById("editarEstado").value = evento.estado;
-  document.getElementById("editarImagen").value = evento.imagen;
+  //document.getElementById("editarImagen").value = evento.imagen;
 
   document.getElementById("modalEditar").style.display = "flex";
 }
